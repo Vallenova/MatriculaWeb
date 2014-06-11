@@ -1,11 +1,8 @@
 require 'spec_helper'
 
-describe "PaginaContenedors" do
-  describe "GET /pagina_contenedors" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get pagina_contenedors_path
-      response.status.should be(200)
-    end
+describe "Página Contenedor" do
+  it "deberia tener el contenido 'Tacna-Perú'" do
+    visit '/pagina_contenedor/home'
+    expect(page).to have_content('Tacna-Perú')
   end
 end
