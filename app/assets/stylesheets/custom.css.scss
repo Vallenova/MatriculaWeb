@@ -1,1 +1,14 @@
 @import "bootstrap";
+/* CSS used here will be applied after bootstrap.css */
+.panel a {
+  color:#777;
+}
+
+.panel a:hover {
+ text-decoration:none;
+ color:#222;
+}
+
+.panel .table td {
+ border-color: #f3f3f3;
+}
