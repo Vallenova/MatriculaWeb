@@ -12,6 +12,8 @@ gem 'sdoc', '0.4.0',          group: :doc
 gem 'bootstrap-sass', '3.1.1.1'
 gem 'high_voltage', '2.1.0'
 gem 'thin', '1.6.2'
+gem 'momentjs-rails', '~> 2.5.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0.1'
 
 group :development do
   gem 'spring', '1.1.3'

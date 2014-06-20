@@ -56,7 +56,10 @@
       <div class="form-group">
       	<%= f.label :fec_nac, "Fecha de Nacimiento:", class: "col-md-3 control-label" %>
       	<div class="col-md-4">
-      		<%= f.text_field :fec_nac, class: "form-control" %>
+          <div class="input-group date" id="datetimepicker1" data-date-format="DD/MM/YYYY">
+      		  <%= f.text_field :fec_nac, class: "form-control" %>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
       	</div>
       </div>
       <br />
@@ -72,12 +75,12 @@
       <div class="form-group">
         <%= f.label :telefono, "Sexo:", class: "col-md-3 control-label" %>
         <div class="col-md-4">
-	      <div class="radio">
-	        <%= f.radio_button :sexo, 'M', :checked => true %> Masculino
-	        <br />
-	        <%= f.radio_button :sexo, 'F', :checked => false %> Femenino
-	      </div>
-	    </div>
+  	      <div class="radio">
+  	        <%= f.radio_button :sexo, 'M', :checked => true %> Masculino
+  	        <br />
+  	        <%= f.radio_button :sexo, 'F', :checked => false %> Femenino
+  	      </div>
+  	    </div>
       </div>
       <br />
       <br />
@@ -86,5 +89,11 @@
     <% end %>
   </div>
 </div>
-
-
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      language: 'sp',
+      pickTime: false
+    });
+  });
+</script>
