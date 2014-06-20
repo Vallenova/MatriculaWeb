@@ -1,5 +1,7 @@
 class ApoderadosController < ApplicationController
-
+	def index
+		@apoderados = Apoderado.all
+	end
 	def show
 		@apoderado = Apoderado.find(params[:id])
 	end

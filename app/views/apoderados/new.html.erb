@@ -56,7 +56,7 @@
       <div class="form-group">
       	<%= f.label :fec_nac, "Fecha de Nacimiento:", class: "col-md-3 control-label" %>
       	<div class="col-md-4">
-          <div class="input-group date" id="datetimepicker1" data-date-format="DD/MM/YYYY">
+          <div class="input-group date" id="datetimepicker1" >
       		  <%= f.text_field :fec_nac, class: "form-control" %>
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
@@ -92,7 +92,7 @@
 <script type="text/javascript">
   $(function () {
     $('#datetimepicker1').datetimepicker({
-      language: 'sp',
+      language: 'es',
       pickTime: false
     });
   });

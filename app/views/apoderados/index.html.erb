@@ -1,0 +1,8 @@
+<% provide(:titulo, "Apoderados") %>
+<ul>
+  <% @apoderados.each do |apoderado| %>
+    <li>
+      <%= apoderado.nombres %>
+    </li>
+  <% end %>
+</ul>
