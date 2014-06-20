@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'pagina_contenedor/home'
+  resources :apoderados
+  #get 'pagina_contenedor/home'
+  root 'pagina_contenedor#home'
+  match '/nuevo_apoderado', to: 'apoderados#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

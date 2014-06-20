@@ -11,6 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140619214848) do
+
+  create_table "apoderados", force: true do |t|
+    t.string   "nombres"
+    t.string   "apellidos"
+    t.string   "sexo"
+    t.date     "fec_nac"
+    t.string   "dni"
+    t.string   "telefono"
+    t.string   "celular"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "direccion"
+  end
+
+  add_index "apoderados", ["dni"], name: "index_apoderados_on_dni", unique: true
 
 end
