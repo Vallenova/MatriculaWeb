@@ -1,13 +1,25 @@
-<% provide(:titulo, "Editar Apoderado") %>
-    <%= form_for(@apoderado) do |f| %>
+<% provide(:titulo, "Editar Alumno") %>
+    <%= form_for(@alumno) do |f| %>
       <div class="btn-group">
-      <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></button>
-      <button type="button" class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></button>
+      <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_alumno", id: "logo" %></button>
+      <button type="button" class="btn btn-default"><%= link_to "Listar", "/alumnos", id: "logo" %></button>
       <%= f.submit "Guardar", class: "btn btn-default" %>
       </div>
       <br />
       <br />
-       <%= render 'shared/error_messages' %>
+      
+      <% if @alumno.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-danger">
+            The form contains <%= pluralize(@alumno.errors.count, "error") %>.
+          </div>
+          <ul>
+          <% @alumno.errors.full_messages.each do |msg| %>
+            <li>* <%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
       <br />
       <div class="form-group">
@@ -35,22 +47,6 @@
       <br />
       <br />
       <div class="form-group">
-        <%= f.label :email, "Correo electrónico:", class: "col-md-3 control-label" %>
-        <div class="col-md-4">
-          <%= f.text_field :email, class: "form-control" %>
-        </div>
-      </div>
-      <br />
-      <br />
-      <div class="form-group">
-        <%= f.label :celular, "Celular:", class: "col-md-3 control-label" %>
-        <div class="col-md-4">
-          <%= f.text_field :celular, class: "form-control" %>
-        </div>
-      </div>
-      <br />
-      <br />
-      <div class="form-group">
         <%= f.label :direccion, "Dirección:", class: "col-md-3 control-label" %>
         <div class="col-md-4">
           <%= f.text_field :direccion, class: "form-control" %>
@@ -61,18 +57,10 @@
       <div class="form-group">
         <%= f.label :fec_nac, "Fecha de Nacimiento:", class: "col-md-3 control-label" %>
         <div class="col-md-4">
-          <div class="input-group date" id="datetimepicker1" data-date-format="DD/MM/YYYY">
-            <%= f.text_field :fec_nac, class: "form-control" , :value => @apoderado.fec_nac.strftime("%d/%m/%Y") %>
+          <div class="input-group date" id="datetimepicker1" >
+            <%= f.text_field :fec_nac, class: "form-control" , :value => @alumno.fec_nac.strftime("%d/%m/%Y") %>
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
-        </div>
-      </div>
-      <br />
-      <br />
-      <div class="form-group">
-        <%= f.label :telefono, "Teléfono(Opcional):", class: "col-md-3 control-label" %>
-        <div class="col-md-4">
-          <%= f.text_field :telefono, class: "form-control" %>
         </div>
       </div>
       <br />
@@ -87,7 +75,14 @@
           </div>
         </div>
       </div>
-
+      <br />
+      <br />
+      <div class="form-group">
+        <%= f.label :apoderado_id, "Apoderado:", class: "col-md-3 control-label" %>
+        <div class="col-md-4">
+          <%= f.text_field :apoderado_id, class: "form-control" %>
+        </div>
+      </div>
     <% end %>
 
 <script type="text/javascript">

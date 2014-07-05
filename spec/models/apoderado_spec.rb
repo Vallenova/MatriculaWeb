@@ -2,7 +2,14 @@ require 'spec_helper'
 
 describe Apoderado do
   #pending "add some examples to (or delete) #{__FILE__}"
-  before { @apoderado = Apoderado.new( nombres: "Ronald", apellidos: "Gomez", sexo: "M", fec_nac: "2014-06-17", dni:"00256314", telefono:"054698532", celular:"954847562", email:"ronald.gomez@vallenova.pe", direccion:"Tacna, Perú" ) }
+  before { @apoderado = Apoderado.new( nombres: "Ronald", 
+    apellidos: "Gomez", 
+    sexo: "M", 
+    fec_nac: "2014-06-17", 
+    dni:"00256314", 
+    telefono:"054698532", 
+    celular:"954847562", 
+    email:"ronald.gomez@vallenova.pe", direccion:"Tacna, Perú" ) }
 
   subject { @apoderado}
 
