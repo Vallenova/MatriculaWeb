@@ -1,7 +1,9 @@
 <% provide(:titulo, "Apoderados") %>
-<div class="btn-group">
-  <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></button>
-  <button type="button" class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></button>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "btn-nuevo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "btn-listar" %></div>
+  </div>
 </div>
 <br />
 <br />

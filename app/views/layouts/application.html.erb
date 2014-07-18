@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:titulo) %> | Sistema Matrícula</title>
+  <title><%= titulo_completo(yield(:titulo)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,12 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
   <div class="container">
     <div class="row">
       <%= render 'layouts/menu' %>
@@ -17,15 +23,9 @@
         <div class="panel panel-default">
           <div class="panel-heading"><h4 class="panel-title"><b><%= yield(:titulo) %></b></h4></div>
           <div class="panel-body">
-            <% if flash[:notice]
-                 notice.message= flash[:notice]
-               elsif flash[:warning]
-                 warning.message= flash[:warning]
-               end
-            %>
             <%= yield %>
           </div>
-        </div>  
+        </div>
       </div>
       <!--/Contenido-->
     </div>

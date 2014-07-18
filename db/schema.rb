@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703222217) do
+ActiveRecord::Schema.define(version: 20140705054430) do
 
   create_table "alumnos", force: true do |t|
     t.string   "nombres"
@@ -40,8 +40,27 @@ ActiveRecord::Schema.define(version: 20140703222217) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "direccion"
+    t.integer  "usuario_id"
   end
 
   add_index "apoderados", ["dni"], name: "index_apoderados_on_dni", unique: true
+
+  create_table "usuarios", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true
+  add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
 
 end

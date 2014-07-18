@@ -10,7 +10,7 @@ describe "Página Contenedor" do
 
     it "deberia tener el título 'Crear Apoderado'" do
       visit root_path
-      expect(page).to have_title("Crear Apoderado | Sistema Matrícula")
+      expect(page).to have_title(titulo_completo(""))
     end
   end
 end
