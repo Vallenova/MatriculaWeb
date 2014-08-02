@@ -1,0 +1,59 @@
+<% provide(:titulo, "Ver Apoderado") %>
+<%= form_for @alumno,  class: "form-horizontal center" do |f| %>
+    <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_alumno", id: "logo" %></button>
+    <button type="button" class="btn btn-default"><%= link_to "Listar", "/alumnos", id: "logo" %></button>
+    <button type="button" class="btn btn-default"><%= link_to 'Editar', edit_alumno_path(@alumno) %></button>
+    </div>
+  <br />
+
+  <br />
+  <div class="form-group">
+  	<%= f.label :nombres, "Nombres:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @alumno.nombres %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+  	<%= f.label :apellidos, "Apellidos:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @alumno.apellidos %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+  	<%= f.label :dni, "Documento de Identidad:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @alumno.dni %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+  	<%= f.label :direccion, "Direccion:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @alumno.direccion %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+  	<%= f.label :fec_nac, "Fecha de nacimiento:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @alumno.fec_nac.strftime("%d/%m/%Y")  %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+  	<%= f.label :sexo, "Sexo:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @alumno.sexo %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= f.label :apoderado_id, "Apoderado:", class: "col-md-4 control-label" %>
+    <div class="col-md-4">
+      <%= @alumno.apoderado_id %>
+    </div>
+  </div>
+<% end %>

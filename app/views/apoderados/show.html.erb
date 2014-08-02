@@ -1,8 +1,10 @@
-<% provide(:titulo, "Ver Apoderado") %>
+<% provide(:titulo, "Apoderado") %>
 <%= form_for @apoderado,  class: "form-horizontal center" do |f| %>
     <div class="btn-group">
-    <%= render 'layouts/menu_mantenimiento' %>
-    <button type="button" class="btn btn-default"><%= link_to 'Editar', edit_apoderado_path(@apoderado) %></button>
+      <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></button>
+      <button type="button" class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></button>
+      <button type="button" class="btn btn-default"><%= link_to 'Editar', edit_apoderado_path(@apoderado) %></button>
+      <button type="button" class="btn btn-default"><%= link_to "crear usuario", "/apoderados", id: "logo" %></button>
     </div>
   <br />
 
@@ -53,7 +55,7 @@
   <div class="form-group">
   	<%= f.label :fec_nac, "Fecha de nacimiento:", class: "col-md-4 control-label" %>
   	<div class="col-md-4">
-      <%= @apoderado.fec_nac %>
+      <%= @apoderado.fec_nac.strftime("%d/%m/%Y") %>
     </div>
   </div>
   <br />

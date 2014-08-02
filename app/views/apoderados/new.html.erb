@@ -1,28 +1,27 @@
 <% provide(:titulo, "Crear Apoderado") %>
 
-    <%= form_for @apoderado,  class: "form-horizontal center" do |f| %>
-    <div class="btn-group">
-    <%= render 'layouts/menu_mantenimiento' %>
+<%= form_for @apoderado, class: "form-horizontal", html: {role: "form"} do |f| %>
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></div>
     <%= f.submit "Crear", class: "btn btn-default" %>
+  </div>
+  <br />
+  <br />
+  <%= render 'shared/error_messages' %>
+  <br />
+  <div class="form-group">
+   	<%= f.label :nombres, "Nombres:", class: "col-md-3 control-label" %>
+   	<div class="col-md-5">
+   	  <%= f.text_field :nombres, class: "form-control" %>
     </div>
-      <br />
-      <br />
-      <%= render 'shared/error_messages' %>
-      <br />
-      <div class="form-group">
-      	<%= f.label :nombres, "Nombres:", class: "col-md-3 control-label" %>
-      	<div class="col-md-4">
-      		<%= f.text_field :nombres, class: "form-control" %>
-      	</div>
-      </div>
-      <br />
-      <br />
-      <div class="form-group">
-      	<%= f.label :apellidos, "Apellidos:", class: "col-md-3 control-label" %>
-      	<div class="col-md-4">
-      		<%= f.text_field :apellidos, class: "form-control" %>
-      	</div>
-      </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :apellidos, "Apellidos:", class: "col-md-3 control-label" %>
+    <div class="col-md-5">
+     	<%= f.text_field :apellidos, class: "form-control" %>
+    </div>
+  </div>
       <br />
       <br />
       <div class="form-group">
@@ -77,12 +76,14 @@
       <br />
       <br />
       <div class="form-group">
-        <%= f.label :telefono, "Sexo:", class: "col-md-3 control-label" %>
+        <%= f.label :sexo, "Sexo:", class: "col-md-3 control-label" %>
         <div class="col-md-4">
   	      <div class="input-group">
-  	        <%= f.radio_button :sexo, 'M', :checked => true %> Masculino 
-  	        <br />
-  	        <%= f.radio_button :sexo, 'F', :checked => false %> Femenino
+  	        <%= f.radio_button :sexo, 'M', :checked => true %>
+            <%= f.label :sexo, "Masculino", class: "control-label", :value => 'M' %>
+            <br/>
+  	        <%= f.radio_button :sexo, 'F', :checked => false %>
+            <%= f.label :sexo, "Femenino", class: "control-label", :value => 'F' %>
   	      </div>
   	    </div>
       </div>

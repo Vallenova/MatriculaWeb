@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
   resources :apoderados
+  resources :alumnos
   #get 'pagina_contenedor/home'
   root 'pagina_contenedor#home'
   match '/nuevo_apoderado', to: 'apoderados#new', via: 'get'
+  match '/nuevo_alumno', to: 'alumnos#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
