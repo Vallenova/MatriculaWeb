@@ -53,7 +53,7 @@
   font-weight: bold;
   background: whitesmoke;
   color: #777;
-  border: 0px solid #dddddd;
+  border: 1px solid #dddddd;
 }
 
 .digg_pagination a {

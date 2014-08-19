@@ -1,10 +1,12 @@
 <% provide(:titulo, "Ver Apoderado") %>
 <%= form_for @alumno,  class: "form-horizontal center" do |f| %>
+  <div class="btn-toolbar" role="toolbar">
     <div class="btn-group">
-    <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_alumno", id: "logo" %></button>
-    <button type="button" class="btn btn-default"><%= link_to "Listar", "/alumnos", id: "logo" %></button>
-    <button type="button" class="btn btn-default"><%= link_to 'Editar', edit_alumno_path(@alumno) %></button>
+      <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_alumno", id: "logo" %></div>
+      <div class="btn btn-default"><%= link_to "Listar", "/alumnos", id: "logo" %></div>
+      <div class="btn btn-default"><%= link_to 'Editar', edit_alumno_path(@alumno) %></div>
     </div>
+  </div>
   <br />
 
   <br />
@@ -53,7 +55,7 @@
   <div class="form-group">
     <%= f.label :apoderado_id, "Apoderado:", class: "col-md-4 control-label" %>
     <div class="col-md-4">
-      <%= @alumno.apoderado_id %>
+      <%= @alumno.apoderado.nombres + ' ' + @alumno.apoderado.apellidos if @alumno.apoderado %>
     </div>
   </div>
 <% end %>

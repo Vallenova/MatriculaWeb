@@ -1,10 +1,13 @@
 <% provide(:titulo, "Editar Apoderado") %>
     <%= form_for(@apoderado) do |f| %>
+    <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-      <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></button>
-      <button type="button" class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></button>
-      <%= f.submit "Guardar", class: "btn btn-default" %>
+        <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></div>
+        <div class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></div>
+        <%= f.submit "Guardar", class: "btn btn-default" %>
       </div>
+    </div>
+    
       <br />
       <br />
        <%= render 'shared/error_messages' %>
@@ -81,9 +84,11 @@
         <%= f.label :sexo, "Sexo:", class: "col-md-3 control-label" %>
         <div class="col-md-4">
           <div class="input-group">
-            <%= f.radio_button :sexo, 'M'%> Masculino 
-            <br />
-            <%= f.radio_button :sexo, 'F'%> Femenino
+            <%= f.radio_button :sexo, 'M', :checked => true %>
+            <%= f.label :sexo, "Masculino", class: "control-label", :value => 'M' %>
+            <br/>
+            <%= f.radio_button :sexo, 'F', :checked => false %>
+            <%= f.label :sexo, "Femenino", class: "control-label", :value => 'F' %>
           </div>
         </div>
       </div>

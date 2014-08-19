@@ -1,27 +1,11 @@
 <% provide(:titulo, "Alumnos") %>
-<div class="btn-group">
-  <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_alumno", id: "logo" %></button>
-  <button type="button" class="btn btn-default"><%= link_to "Listar", "/alumnos", id: "logo" %></button>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_alumno", id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", "/alumnos", id: "logo" %></div>
+  </div>
 </div>
 <br />
 <br />
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Documento de identidad</th>
-      <th>Apoderado</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @alumnos.each do |alumno| %>
-    <tr>
-      <td><%= alumno.nombres %></td>
-      <td><%= alumno.apellidos %></td>
-      <td><u><%= link_to "#{alumno.dni}", alumno_path(alumno)%></u></td>
-      <td><%= alumno.apoderado_id %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+
+<div class = "sort_paginate_ajax"><%= render 'alumnos' %></div>

@@ -2,12 +2,13 @@
 
 FactoryGirl.define do
   factory :alumno do
-    nombres "MyString"
-    apellidos "MyString"
-    sexo "MyString"
+    nombres "Rita"
+    apellidos "Miller"
+    sexo "F"
     fec_nac "2014-07-03"
-    dni "MyString"
-    direccion "MyString"
+    dni "85413269"
+    #sequence(:dni)  { |n| "1234567#{n}" }
+    direccion "Tacna"
     apoderado_id 1
   end
 end

@@ -1,0 +1,27 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Documento de identidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @apoderados.each do |apoderado| %>
+        <tr>
+          <td><input type="radio" name="radio_apoderado" value=<%= apoderado.id %> /></td>
+          <td><%= apoderado.nombres %></td>
+          <td><%= apoderado.apellidos %></td>
+          <td><%= apoderado.dni %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="digg_pagination">
+  <%= ajax_will_paginate @apoderados, :previous_label => 'Anterior', :next_label => 'Siguiente'%>
+</div>

@@ -1,27 +1,34 @@
 class AlumnosController < ApplicationController
  def index
-  @alumnos = Alumno.all
+  #@alumnos = Alumno.all
+  @alumnos = Alumno.paginate(:page => params[:page], :per_page => 5)
  end
 
  def show
   @alumno = Alumno.find params[:id]
+  @apoderado = @alumno.apoderado
  end
 
  def edit
   @alumno = Alumno.find params[:id]
+  #@apoderados = Apoderado.paginate(:page => params[:page], :per_page => 5)
+  obtener_apoderados
  end
 
  def new
-  @alumno = Alumno.new
+   #@apoderados = Apoderado.paginate(:page => params[:page], :per_page => 5)
+   obtener_apoderados
+   @alumno = Alumno.new
  end
 
  def create
   @alumno = Alumno.new(alumno_params)
   if @alumno.save
-   flash[:success] = "Alumno Creado"
-   redirect_to @alumno
+    flash[:success] = "Alumno Creado"
+    redirect_to @alumno
   else
-   render 'new'
+    obtener_apoderados
+    render 'new'
   end
  end
  def update
@@ -30,8 +37,13 @@ class AlumnosController < ApplicationController
    flash[:success] = "Alumno Actualizado"
    redirect_to @alumno
   else
+    obtener_apoderados
    render 'edit'
   end
+ end
+
+ def obtener_apoderados
+   @apoderados = Apoderado.paginate(:page => params[:page], :per_page => 5)
  end
 
  private

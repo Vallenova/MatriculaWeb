@@ -7,28 +7,5 @@
 </div>
 <br />
 <br />
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Documento de identidad</th>
-      <th>Telefono Fijo</th>
-      <th>Celular</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @apoderados.each do |apoderado| %>
-    <tr>
-      <td><%= apoderado.nombres %></td>
-      <td><%= apoderado.apellidos %></td>
-      <td><u><%= link_to "#{apoderado.dni}", apoderado_path(apoderado)%></u></td>
-      <td><%= apoderado.telefono %></td>
-      <td><%= apoderado.celular %></td>
-      <td><%= apoderado.email %></td>
 
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<div class = "sort_paginate_ajax"><%= render 'apoderados' %></div>

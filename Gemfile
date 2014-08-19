@@ -16,6 +16,8 @@ gem 'momentjs-rails', '~> 2.5.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0.1'
 gem 'devise', '~>3.2.4'
 gem 'devise-i18n', '~> 0.10.3'
+gem 'will_paginate', '~> 3.0.7'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 group :development do
   gem 'spring', '1.1.3'
@@ -35,12 +37,13 @@ end
 group :development, :test do
   gem 'factory_girl_rails', '4.4.1'
   gem 'rspec-rails', '2.14.2'
+  gem 'faker', '1.3.0'
 end
 
 group :test do
   gem 'capybara', '2.2.1'
   gem 'database_cleaner', '1.2.0'
-  gem 'faker', '1.3.0'
+  #gem 'faker', '1.3.0'
   gem 'launchy', '2.4.2'
   gem 'selenium-webdriver', '2.41.0'
 end

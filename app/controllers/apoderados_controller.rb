@@ -1,6 +1,12 @@
 class ApoderadosController < ApplicationController
 	def index
-		@apoderados = Apoderado.all
+		#@apoderados = Apoderado.all
+		#if params[:search]
+		#	@apoderados = Apoderado.search(params[:search])
+		#else
+		#	@apoderados = Apoderado.all
+		#end
+		@apoderados = Apoderado.paginate(:page => params[:page], :per_page => 5)
 	end
 	def show
 		@apoderado = Apoderado.find(params[:id])
@@ -15,7 +21,7 @@ class ApoderadosController < ApplicationController
 	def create
     @apoderado = Apoderado.new(apoderado_params)
 
-		if @apoderado.save
+	  if @apoderado.save
 			flash[:success] = "Apoderado Creado"
 	    redirect_to @apoderado
 	  else

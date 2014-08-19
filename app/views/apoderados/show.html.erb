@@ -1,11 +1,13 @@
 <% provide(:titulo, "Apoderado") %>
 <%= form_for @apoderado,  class: "form-horizontal center" do |f| %>
+  <div class="btn-toolbar" role="toolbar">  
     <div class="btn-group">
-      <button type="button" class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></button>
-      <button type="button" class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></button>
-      <button type="button" class="btn btn-default"><%= link_to 'Editar', edit_apoderado_path(@apoderado) %></button>
-      <button type="button" class="btn btn-default"><%= link_to "crear usuario", "/apoderados", id: "logo" %></button>
+      <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_apoderado", id: "logo" %></div>
+      <div class="btn btn-default"><%= link_to "Listar", "/apoderados", id: "logo" %></div>
+      <div class="btn btn-default"><%= link_to 'Editar', edit_apoderado_path(@apoderado) %></div>
+      <div class="btn btn-default"><%= link_to "crear usuario", "/apoderados", id: "logo" %></div>
     </div>
+  </div>  
   <br />
 
   <%= render 'shared/error_messages' %>

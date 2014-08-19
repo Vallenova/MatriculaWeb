@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20140705054430) do
     t.string   "telefono"
     t.string   "celular"
     t.string   "email"
+    t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "direccion"
-    t.integer  "usuario_id"
   end
 
   add_index "apoderados", ["dni"], name: "index_apoderados_on_dni", unique: true

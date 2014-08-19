@@ -6,9 +6,9 @@ FactoryGirl.define do
     apellidos "Gomez Asqui"
     sexo "M"
     fec_nac "2014-06-17"
-    dni "44278916"
-    telefono "052314403"
-    celular "952303164"
-    email "ronald.gomez@vallenova.pe"
+    dni "44556699"
+    telefono "062319152"
+    celular "946318265"
+    email "ronald.gomez@ejemplo.pe"
   end
 end
