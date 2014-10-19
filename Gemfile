@@ -14,8 +14,6 @@ gem 'high_voltage', '2.1.0'
 gem 'thin', '1.6.2'
 gem 'momentjs-rails', '~> 2.5.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0.1'
-gem 'devise', '~>3.2.4'
-gem 'devise-i18n', '~> 0.10.3'
 gem 'will_paginate', '~> 3.0.7'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 

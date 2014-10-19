@@ -9,7 +9,6 @@ class CreateApoderados < ActiveRecord::Migration
       t.string :telefono
       t.string :celular
       t.string :email
-      t.integer :usuario_id
 
       t.timestamps
     end

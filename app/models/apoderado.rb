@@ -1,5 +1,4 @@
 class Apoderado < ActiveRecord::Base
-	belongs_to :usuario
 	has_many :alumnno
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
