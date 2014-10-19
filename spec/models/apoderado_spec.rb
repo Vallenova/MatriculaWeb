@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe Apoderado do
 
-  let(:usuario) { FactoryGirl.create(:usuario) }
-
   before do
     @apoderado = Apoderado.new( nombres: "Ronald",
       apellidos: "Gomez",
@@ -14,7 +12,6 @@ describe Apoderado do
       celular:"954847562",
       email:"ronald.gomez@vallenova.pe",
       direccion:"Tacna, Perú" )
-    @apoderado.usuario = usuario
   end
 
   subject { @apoderado}
@@ -28,9 +25,6 @@ describe Apoderado do
   it {should respond_to(:celular)}
   it {should respond_to(:email)}
   it {should respond_to(:direccion)}
-  it {should respond_to(:usuario_id)}
-  it {should respond_to(:usuario)}
-  its(:usuario) { should eq usuario }
 
   it {should be_valid}
 
@@ -178,8 +172,5 @@ describe Apoderado do
     before { @apoderado.direccion = " "}
     it {should_not be_valid}
   end
-  #describe "Registro Apoderado" do
-  #  before {visit registro_apoderado_path}
-  #  let(:submit) {"Guardar"}
-  #end
+
 end
