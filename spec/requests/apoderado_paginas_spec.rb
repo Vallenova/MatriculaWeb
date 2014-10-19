@@ -45,7 +45,6 @@ describe "Páginas Apoderado" do
 
         it { should have_selector('div.col-md-4', text: apoderado.nombres) }
         it { should have_title(titulo_completo("Apoderado")) }
-        it { should have_link("crear usuario") }
       end
   	end
   end
