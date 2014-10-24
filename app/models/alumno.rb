@@ -9,4 +9,7 @@ class Alumno < ActiveRecord::Base
 	validates :direccion, presence:true
 	validates :dni, presence:true, uniqueness: true,  length: {is: 8}, format: { with: VALID_DNI_REGEX }
 	
+	def self.search(query)
+	  where("nombres like ?", "%#{query}%")
+	end
 end

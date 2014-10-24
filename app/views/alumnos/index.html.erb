@@ -8,4 +8,10 @@
 <br />
 <br />
 
-<div class = "sort_paginate_ajax"><%= render 'alumnos' %></div>
+<%= form_tag alumnos_path, :method => 'get' , :id => "alumnos_search" , remote: true do %>
+ <div class="form-group" align="right">
+  <%= text_field_tag :search,  params[:search] %>
+  <%= submit_tag "Buscar", :nombres => nil %>
+ </div>
+ <div id="alumnos"><%= render 'alumnos' %></div>
+<% end %>

@@ -1,7 +1,10 @@
 class AlumnosController < ApplicationController
+ helper_method :sort_column, :sort_direction
+
  def index
   #@alumnos = Alumno.all
-  @alumnos = Alumno.paginate(:page => params[:page], :per_page => 5)
+  #@alumnos = Alumno.paginate(:page => params[:page], :per_page => 5)
+  @alumnos = Alumno.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
  end
 
  def show
@@ -51,4 +54,13 @@ class AlumnosController < ApplicationController
  def alumno_params
   params.require(:alumno).permit(:nombres, :apellidos, :sexo, :dni, :direccion, :fec_nac, :apoderado_id)
  end
+
+ def sort_column
+  Alumno.column_names.include?(params[:sort]) ? params[:sort] : "nombres"
+ end
+  
+ def sort_direction
+  %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+ end
+ 
 end

@@ -7,6 +7,7 @@ FactoryGirl.define do
     sexo "M"
     fec_nac "2014-06-17"
     dni "44556699"
+    direccion "Tacna"
     telefono "062319152"
     celular "946318265"
     email "ronald.gomez@ejemplo.pe"

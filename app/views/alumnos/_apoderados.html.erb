@@ -1,21 +1,20 @@
-<%= hidden_field_tag :direction, params[:direction] %>
-<%= hidden_field_tag :sort, params[:sort] %>
-
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><%= sortable "nombres" %></th>
-        <th><%= sortable "apellidos" %></th>
-        <th><%= sortable "dni" %></th>
+        <th></th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Documento de identidad</th>
       </tr>
     </thead>
     <tbody>
       <% @apoderados.each do |apoderado| %>
         <tr>
+          <td><input type="radio" name="radio_apoderado" value=<%= apoderado.id %> /></td>
           <td><%= apoderado.nombres %></td>
           <td><%= apoderado.apellidos %></td>
-           <td><u><%= link_to "#{apoderado.dni}", apoderado_path(apoderado)%></u></td>
+          <td><%= apoderado.dni %></td>
         </tr>
       <% end %>
     </tbody>

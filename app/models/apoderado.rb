@@ -1,5 +1,5 @@
 class Apoderado < ActiveRecord::Base
-	has_many :alumnno
+	has_many :alumno
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	VALID_DNI_REGEX = /\d{8}/
@@ -19,7 +19,7 @@ class Apoderado < ActiveRecord::Base
 	  where("nombres like ?", "%#{query}%")
 	end
 
-	def self.search(id)
-	  where("id like ?", "%#{id}%")
-	end
+	#def self.search(id)
+	#  where("id like ?", "%#{id}%")
+	#end
 end
