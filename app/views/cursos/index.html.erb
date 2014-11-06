@@ -1,0 +1,16 @@
+<% provide(:titulo, "Cursos") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_curso", id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", "/cursos", id: "logo" %></div>
+  </div>
+</div>
+<br />
+<br />
+<%= form_tag cursos_path, :method => 'get' , :id => "cursos_search" , remote: true do %>
+	<div class="form-group" align="right">
+		<%= text_field_tag :search,  params[:search] %>
+    	<%= submit_tag "Buscar", :nombre => nil %>
+    </div>
+	<div id="cursos"><%= render 'cursos' %></div>
+<% end %>

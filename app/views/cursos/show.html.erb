@@ -1,0 +1,25 @@
+<% provide(:titulo, "Curso") %>
+<%= form_for @curso,  class: "form-horizontal center" do |f| %>
+  <div class="btn-toolbar" role="toolbar">  
+    <div class="btn-group">
+      <div class="btn btn-default"><%= link_to "Nuevo", "/nuevo_curso", id: "logo" %></div>
+      <div class="btn btn-default"><%= link_to "Listar", "/cursos", id: "logo" %></div>
+      <div class="btn btn-default"><%= link_to 'Editar', edit_curso_path(@curso) %></div>
+    </div>
+  </div>  
+  <br />
+  <br />
+  <div class="form-group">
+  	<%= f.label :nombre, "Nombre:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @curso.nombre %>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+  	<%= f.label :area, "Área:", class: "col-md-4 control-label" %>
+  	<div class="col-md-4">
+      <%= @curso.area %>
+    </div>
+  </div>
+<% end %>

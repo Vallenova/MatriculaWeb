@@ -1,0 +1,25 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= sortable "nombre" %></th>
+        <th><%= sortable "area" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @cursos.each do |curso| %>
+      <tr>
+        <td><u><%= link_to "#{curso.nombre}", curso_path(curso) %></u></td>
+        <td><%= curso.area %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="digg_pagination">
+  <%= ajax_will_paginate @cursos, :previous_label => 'Anterior', :next_label => 'Siguiente'%>
+</div>
